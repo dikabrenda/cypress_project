@@ -1,0 +1,31 @@
+{
+    "baseUrl": "https://opensource-demo.orangehrmlive.com",
+    "env": {
+      "coverage": true
+    },
+    "viewportWidth": 1920,
+    "viewportHeight": 1080,
+    "video": false,
+    "screenshotOnRunFailure": true,
+    "screenshotsFolder": "cypress/reports/mochareport/assets",
+    "videosFolder": "cypress/reports/mochareport/assets",
+    "integrationFolder": "cypress/integration",
+    "chromeWebSecurity": false,
+    "pluginsFile": false,
+    "defaultCommandTimeout": 10000,
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+      "reporterEnabled": "mochawesome",
+      "mochawesomeReporterOptions": {
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "showPassed": true,
+        "autoOpen": false,
+        "charts": true,
+        "code": true
+      }
+    }
+  }

@@ -1,0 +1,34 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "Protofolio Automation",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "cypress run --headed --browser chrome",
+    "test:headless": "cypress run --headless --browser chrome",
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareport",
+    "pretest": "npm run clean:reports",
+    "cy:combine": "mochawesome-merge ./cypress/reports/mocha/*.json -o ./cypress/reports/mochareport/report.json",
+    "cy:generate": "marge ./cypress/reports/mochareport/report.json -f report -o cypress/reports/mochareport --inline",
+    "posttest": "npm run cy:combine && npm run cy:generate",
+    "test": "npm run test:headless || npm run posttest"
+  },
+  "keywords": [],
+  "author": "Dika Brenda Angkasa",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^2.3.0",
+    "cypress-multi-reporters": "^1.5.0",
+    "dotenv": "^16.0.0",
+    "mocha": "^9.2.1",
+    "mochawesome": "^7.1.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.1.0"
+  },
+  "devDependencies": {
+    "cypress": "^9.5.1",
+    "cypress-xpath": "^1.6.2",
+    "prettier": "^2.5.1"
+  }
+}
