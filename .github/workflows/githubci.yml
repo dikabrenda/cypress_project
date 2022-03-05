@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    name: Regression ACV - ${{ matrix.node-version}} ${{ matrix.os }}
+    name: Github CI - ${{ matrix.node-version}} ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     container: cypress/browsers:node14.17.0-chrome88-ff89
 
@@ -27,24 +27,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    #Request
-    - name: Telegram Notify request
-      if: ${{ github.event_name == 'pull_request' }}
-      uses: appleboy/telegram-action@v0.0.8
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: User ${{github.actor}} in ${{ github.repository }} repository. Make ${{ github.event_name }}. Job ${{ github.job }} URL - "${{ github.event.pull_request.title }} --> ${{ github.event.pull_request.html_url }}"
-    
-    #Push
-    - name: Telegram Notify push
-      if: ${{ github.event_name == 'push' }}
-      uses: appleboy/telegram-action@v0.0.8
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: User ${{github.actor}} in ${{ github.repository }} repository. The ${{ github.event_name }} event triggered - "${{ github.event.head_commit.message }} --> ${{ github.event.head_commit.url }}"
-        
     - name: npm install
       run: |
        npm install
