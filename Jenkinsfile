@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     stages{
-        stage('Build'){
+        stage('SCM'){
             steps{
                 echo "Building the application"
             }
@@ -16,11 +16,10 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"
-                bat "npm run build --if-present"
-                bat "npm run test"
+                bat "npm cypress run --headless --browser chrome"
             }
         }
-        stage('Deploying'){
+        stage('Stash Report'){
             steps{
                 echo "Deploy the application"
             }
