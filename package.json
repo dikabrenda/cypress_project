@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:chrome": "cypress run --headed --browser chrome",
-    "test:headless": "cypress run --browser ${BROWSER} --spec ${SPEC}",
+    "test:headless": "cypress run --headless --browser chrome",
     "cy:combine": "mochawesome-merge ./cypress/reports/mocha/*.json -o ./cypress/reports/mochareport/index.json",
     "cy:generate": "marge ./cypress/reports/mochareport/index.json -f index -o cypress/reports/mochareport",
     "posttest": "npm run cy:combine && npm run cy:generate",

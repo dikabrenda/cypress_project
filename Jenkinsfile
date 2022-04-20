@@ -4,7 +4,6 @@ pipeline {
 
     parameters {
         string(name: 'SPEC', defaultValue: "cypress/integration/*.test.js", description: "enter the script path")
-        choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "choose your browser")
     }
 
     options {
