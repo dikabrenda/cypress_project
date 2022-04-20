@@ -16,7 +16,7 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"
-                bat "npm cypress run --headless --browser chrome"
+                bat "npm run test:headless"
             }
         }
         stage('Stash Report'){
