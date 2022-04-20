@@ -1,7 +1,12 @@
 pipeline {
 
     agent any
-    
+
+    parameters {
+        string(name: 'SPEC', defaultValue: "cypress/integration/*.test.js", description: "enter the script path")
+        choice(name: 'BROWSER', choice: ['chrome', 'edge', 'firefox'], description: "choose your browser")
+    }
+
     options {
         ansiColor('xterm')
     }
@@ -20,7 +25,7 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"
-                bat "npm run test:headless"
+                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
         stage('Stash Report'){
@@ -32,7 +37,7 @@ pipeline {
 
     post{
         always{
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
         }
     }
 }
