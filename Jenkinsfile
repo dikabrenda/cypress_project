@@ -2,15 +2,6 @@ pipeline {
 
     agent any
 
-    parameters{
-        string(name: 'SPEC', defaultValue: "cypress/integration/*.test.js", description: "Enter the script path")
-        choice(name: 'BROWSER', ['chrome', 'edge', 'firefox'], description: "Choise your browser")
-    }
-
-    options{
-        ansiColor('xterm')
-    }
-
     stages{
         stage('Build'){
             steps{
@@ -25,7 +16,8 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"
-                bat "npm cypress run --headless --browser ${BROWSER} --spec ${SPEC}"
+                bat "npm run build --if-present"
+                bat "npm run test"
             }
         }
         stage('Deploying'){
