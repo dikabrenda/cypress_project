@@ -11,25 +11,27 @@ pipeline {
         ansiColor('xterm')
     }
 
-    stage('Build'){
-        steps{
-            echo "Building the application"
+    stages{
+        stage('Build'){
+            steps{
+                echo "Building the application"
+            }
         }
-    }
-    stage('Populate ENV'){
-        steps{
-            echo "Populate ENV"
+        stage('Populate ENV'){
+            steps{
+                echo "Populate ENV"
+            }
         }
-    }
-    stage('Testing'){
-        steps{
-            bat "npm i"
-            bat "npm cypress run --headless --browser ${BROWSER} --spec ${SPEC}"
+        stage('Testing'){
+            steps{
+                bat "npm i"
+                bat "npm cypress run --headless --browser ${BROWSER} --spec ${SPEC}"
+            }
         }
-    }
-    stage('Deploying'){
-        step{
-            echo "Deploy the application"
+        stage('Deploying'){
+            step{
+                echo "Deploy the application"
+            }
         }
     }
 
