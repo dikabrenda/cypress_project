@@ -2,7 +2,7 @@ pipeline {
 
     agent {
         docker {
-            image: node:alpine3.15
+            image: node:latest
         }
     }
 
