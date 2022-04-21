@@ -5,9 +5,9 @@
     "passes": 9,
     "pending": 0,
     "failures": 1,
-    "start": "2022-04-21T07:08:59.682Z",
-    "end": "2022-04-21T07:09:06.772Z",
-    "duration": 5541,
+    "start": "2022-04-21T07:12:39.628Z",
+    "end": "2022-04-21T07:12:46.592Z",
+    "duration": 5289,
     "testsRegistered": 10,
     "passPercent": 90,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "49f722c2-5fff-4f52-b26c-5c543ab52221",
+      "uuid": "1c042f26-63d9-41d3-a91f-0831b8712503",
       "title": "",
       "fullFile": "cypress/integration/TC01_login.test.js",
       "file": "cypress/integration/TC01_login.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "dabf785e-01d8-411e-aec5-7611bf2ec057",
+          "uuid": "5e7c4431-cf60-4a00-8827-911affe52b8c",
           "title": "as a user, i want to login successfully",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "3f6e6e41-c481-4b32-a63a-e64933dedba4",
+              "uuid": "0e7443a2-5e8e-4392-9640-8079d31beccf",
               "title": "User Login using Invalid Credential",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "user filled in username",
                   "fullTitle": "as a user, i want to login successfully User Login using Invalid Credential user filled in username",
                   "timedOut": null,
-                  "duration": 1175,
+                  "duration": 1593,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -56,8 +56,8 @@
                   "context": null,
                   "code": "_login.default.setUsername(data.username);",
                   "err": {},
-                  "uuid": "51e70f80-6501-4d57-b83f-c89b120ecd81",
-                  "parentUUID": "3f6e6e41-c481-4b32-a63a-e64933dedba4",
+                  "uuid": "a405031e-fab8-4a4d-a4fe-fd3179498dce",
+                  "parentUUID": "0e7443a2-5e8e-4392-9640-8079d31beccf",
                   "isHook": false,
                   "skipped": false
                 },
@@ -65,7 +65,7 @@
                   "title": "user filled in password",
                   "fullTitle": "as a user, i want to login successfully User Login using Invalid Credential user filled in password",
                   "timedOut": null,
-                  "duration": 409,
+                  "duration": 410,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -74,8 +74,8 @@
                   "context": null,
                   "code": "_login.default.setPassword(data.password);",
                   "err": {},
-                  "uuid": "3da1ee36-c422-4ae2-a9b6-ba3d9a36e9ff",
-                  "parentUUID": "3f6e6e41-c481-4b32-a63a-e64933dedba4",
+                  "uuid": "5cf5a96a-ba02-4932-932c-5126ae7796b4",
+                  "parentUUID": "0e7443a2-5e8e-4392-9640-8079d31beccf",
                   "isHook": false,
                   "skipped": false
                 },
@@ -83,7 +83,7 @@
                   "title": "user tap login button",
                   "fullTitle": "as a user, i want to login successfully User Login using Invalid Credential user tap login button",
                   "timedOut": null,
-                  "duration": 403,
+                  "duration": 389,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -92,28 +92,28 @@
                   "context": null,
                   "code": "_login.default.clickLogin();",
                   "err": {},
-                  "uuid": "5eb1c1da-4349-41e9-b10e-4250ac1725eb",
-                  "parentUUID": "3f6e6e41-c481-4b32-a63a-e64933dedba4",
+                  "uuid": "27e6f939-12d3-4346-938f-26384571455f",
+                  "parentUUID": "0e7443a2-5e8e-4392-9640-8079d31beccf",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "51e70f80-6501-4d57-b83f-c89b120ecd81",
-                "3da1ee36-c422-4ae2-a9b6-ba3d9a36e9ff",
-                "5eb1c1da-4349-41e9-b10e-4250ac1725eb"
+                "a405031e-fab8-4a4d-a4fe-fd3179498dce",
+                "5cf5a96a-ba02-4932-932c-5126ae7796b4",
+                "27e6f939-12d3-4346-938f-26384571455f"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1987,
+              "duration": 2392,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "c38b44a0-9b59-443d-af4c-7187b67d0d42",
+              "uuid": "7ebb5aed-ddf1-477f-a7d7-ffe978c14aa0",
               "title": "User login using Invalid Credential",
               "fullFile": "",
               "file": "",
@@ -124,7 +124,7 @@
                   "title": "user filled in username",
                   "fullTitle": "as a user, i want to login successfully User login using Invalid Credential user filled in username",
                   "timedOut": null,
-                  "duration": 293,
+                  "duration": 300,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -133,8 +133,8 @@
                   "context": null,
                   "code": "_login.default.setUsername(data.username);",
                   "err": {},
-                  "uuid": "2b684466-6573-4cdf-9133-256abe8a29bd",
-                  "parentUUID": "c38b44a0-9b59-443d-af4c-7187b67d0d42",
+                  "uuid": "abb9caea-488e-42f1-bb1e-f33ba9aacc99",
+                  "parentUUID": "7ebb5aed-ddf1-477f-a7d7-ffe978c14aa0",
                   "isHook": false,
                   "skipped": false
                 },
@@ -142,7 +142,7 @@
                   "title": "user filled in password",
                   "fullTitle": "as a user, i want to login successfully User login using Invalid Credential user filled in password",
                   "timedOut": null,
-                  "duration": 321,
+                  "duration": 330,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -151,8 +151,8 @@
                   "context": null,
                   "code": "_login.default.setPassword(data.password);",
                   "err": {},
-                  "uuid": "42ecc67c-042e-4895-8d55-e1da2886694e",
-                  "parentUUID": "c38b44a0-9b59-443d-af4c-7187b67d0d42",
+                  "uuid": "3f393205-e8bf-4003-b33b-a07a46b3661f",
+                  "parentUUID": "7ebb5aed-ddf1-477f-a7d7-ffe978c14aa0",
                   "isHook": false,
                   "skipped": false
                 },
@@ -160,7 +160,7 @@
                   "title": "user tap login button",
                   "fullTitle": "as a user, i want to login successfully User login using Invalid Credential user tap login button",
                   "timedOut": null,
-                  "duration": 524,
+                  "duration": 257,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -169,22 +169,22 @@
                   "context": null,
                   "code": "_login.default.clickLogin();",
                   "err": {},
-                  "uuid": "8cf7b496-41d8-4911-aeaf-2d258eb633b1",
-                  "parentUUID": "c38b44a0-9b59-443d-af4c-7187b67d0d42",
+                  "uuid": "67ed1c5b-e974-430a-9032-f6538b45cc2a",
+                  "parentUUID": "7ebb5aed-ddf1-477f-a7d7-ffe978c14aa0",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "2b684466-6573-4cdf-9133-256abe8a29bd",
-                "42ecc67c-042e-4895-8d55-e1da2886694e",
-                "8cf7b496-41d8-4911-aeaf-2d258eb633b1"
+                "abb9caea-488e-42f1-bb1e-f33ba9aacc99",
+                "3f393205-e8bf-4003-b33b-a07a46b3661f",
+                "67ed1c5b-e974-430a-9032-f6538b45cc2a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1138,
+              "duration": 887,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -210,7 +210,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "24cb336b-bccb-406a-9657-cf98cc10884f",
+      "uuid": "26ccec28-717d-4a89-9eb1-b62c454fa07b",
       "title": "",
       "fullFile": "cypress/integration/TC02_FailedCase.test.js",
       "file": "cypress/integration/TC02_FailedCase.test.js",
@@ -219,7 +219,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "63586f56-d340-428a-97da-d18ffdd1dfbb",
+          "uuid": "2c8233c3-abc8-4a99-ab39-7eaefae02d0a",
           "title": "this for scenario failed case and uploaded image",
           "fullFile": "",
           "file": "",
@@ -228,7 +228,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "f347a386-1899-4a3e-a41d-26f85594a7a3",
+              "uuid": "ac489971-be18-455b-889c-0c5bd9424c52",
               "title": "Wording Message Invalid Login",
               "fullFile": "",
               "file": "",
@@ -239,7 +239,7 @@
                   "title": "user filled in username",
                   "fullTitle": "this for scenario failed case and uploaded image Wording Message Invalid Login user filled in username",
                   "timedOut": null,
-                  "duration": 1325,
+                  "duration": 1140,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -248,8 +248,8 @@
                   "context": null,
                   "code": "_login.default.setUsername('Admin');",
                   "err": {},
-                  "uuid": "703f8d0f-3d6c-48eb-8bad-5b71c82ebe62",
-                  "parentUUID": "f347a386-1899-4a3e-a41d-26f85594a7a3",
+                  "uuid": "eb39787b-cf8e-4c9b-8d4d-d208d8adb147",
+                  "parentUUID": "ac489971-be18-455b-889c-0c5bd9424c52",
                   "isHook": false,
                   "skipped": false
                 },
@@ -257,7 +257,7 @@
                   "title": "user filled in wrong password",
                   "fullTitle": "this for scenario failed case and uploaded image Wording Message Invalid Login user filled in wrong password",
                   "timedOut": null,
-                  "duration": 316,
+                  "duration": 325,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -266,8 +266,8 @@
                   "context": null,
                   "code": "_login.default.setPassword('!@£!$@£');",
                   "err": {},
-                  "uuid": "a014d2f1-972a-4fec-8cd9-6b364adcba39",
-                  "parentUUID": "f347a386-1899-4a3e-a41d-26f85594a7a3",
+                  "uuid": "8f7c7064-dcd2-4cfb-8b98-923ccae8fc06",
+                  "parentUUID": "ac489971-be18-455b-889c-0c5bd9424c52",
                   "isHook": false,
                   "skipped": false
                 },
@@ -275,7 +275,7 @@
                   "title": "user tap login button",
                   "fullTitle": "this for scenario failed case and uploaded image Wording Message Invalid Login user tap login button",
                   "timedOut": null,
-                  "duration": 527,
+                  "duration": 377,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -284,8 +284,8 @@
                   "context": null,
                   "code": "_login.default.clickLogin();",
                   "err": {},
-                  "uuid": "9cfabcbc-1f65-4d21-b4c5-94aaac4aedb2",
-                  "parentUUID": "f347a386-1899-4a3e-a41d-26f85594a7a3",
+                  "uuid": "b188485a-f93a-4ec3-9d36-3c67333a0c33",
+                  "parentUUID": "ac489971-be18-455b-889c-0c5bd9424c52",
                   "isHook": false,
                   "skipped": false
                 },
@@ -293,7 +293,7 @@
                   "title": "user verify a wording message",
                   "fullTitle": "this for scenario failed case and uploaded image Wording Message Invalid Login user verify a wording message",
                   "timedOut": null,
-                  "duration": 248,
+                  "duration": 168,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -306,24 +306,24 @@
                     "estack": "AssertionError: expected 'Csrf token validation failed' to deeply equal 'credentials'\n    at Context.eval (https://opensource-demo.orangehrmlive.com/__cypress/tests?p=cypress/integration/TC02_FailedCase.test.js:179:26)",
                     "diff": "- 'Csrf token validation failed'\n+ 'credentials'\n"
                   },
-                  "uuid": "623c5ac2-64ec-4b7e-9802-7cdd0d6b33eb",
-                  "parentUUID": "f347a386-1899-4a3e-a41d-26f85594a7a3",
+                  "uuid": "b9693da3-4693-4772-b31f-04b8aa128dcf",
+                  "parentUUID": "ac489971-be18-455b-889c-0c5bd9424c52",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "703f8d0f-3d6c-48eb-8bad-5b71c82ebe62",
-                "a014d2f1-972a-4fec-8cd9-6b364adcba39",
-                "9cfabcbc-1f65-4d21-b4c5-94aaac4aedb2"
+                "eb39787b-cf8e-4c9b-8d4d-d208d8adb147",
+                "8f7c7064-dcd2-4cfb-8b98-923ccae8fc06",
+                "b188485a-f93a-4ec3-9d36-3c67333a0c33"
               ],
               "failures": [
-                "623c5ac2-64ec-4b7e-9802-7cdd0d6b33eb"
+                "b9693da3-4693-4772-b31f-04b8aa128dcf"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 2416,
+              "duration": 2010,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
