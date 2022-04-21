@@ -2,10 +2,6 @@ import loginPage from "../pages/login.page";
 
 describe('this for scenario failed case and uploaded image', () =>{
 
-    before(() => {
-        loginPage.openBrowser()
-    })
-
     describe('Wording Message Invalid Login', () => {
         it('user filled in username', () => {
             loginPage.setUsername('Admin')

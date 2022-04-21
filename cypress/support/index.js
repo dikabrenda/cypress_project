@@ -14,4 +14,22 @@ Cypress.on('test:after:run', (test, runnable) => {
 });
 
 import dotenv, {config} from "dotenv"
+import loginPage from '../pages/login.page';
 dotenv.config()
+
+before(() => {
+  console.log("Navigate Browser");
+  loginPage.openBrowser()
+})
+
+beforeEach(() => {
+  console.log("Login");
+})
+
+afterEach(() => {
+  console.log("Logout");
+})
+
+after(() => {
+  console.log("Close Browser");
+})
