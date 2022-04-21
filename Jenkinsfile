@@ -25,7 +25,7 @@ pipeline {
         stage('Populate ENV'){
             steps{
                 echo "Populate ENV"
-                bat "cp env\env.sample .env.test"
+                bat "cp env\\env.sample .env.test"
             }
         }
         stage('Testing'){
