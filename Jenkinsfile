@@ -16,7 +16,6 @@ pipeline {
             steps{
                 echo "Building docker image"
                 bat 'node --version'
-                bat 'docker build -t dikabrenda/cypress_project .'
             }
         }
         stage('Populate ENV'){
