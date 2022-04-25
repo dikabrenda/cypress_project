@@ -30,7 +30,7 @@ jobs:
       - name: Build and Push Docker
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: dikabrenda/cypress_project
+          image: ${{ secrets.DOCKER_IMAGE }}
           tags: v1
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
