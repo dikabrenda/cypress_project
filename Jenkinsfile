@@ -1,15 +1,11 @@
 pipeline {
 
-    agent {
-        docker {
-            image: 'node:latest'
-        }
-    }
+    agent any
 
-    parameters {
-        string(name: 'SPEC', defaultValue: "cypress/integration/*.test.js", description: "enter the script path")
-        choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "choose your browser")
-    }
+    // parameters {
+        // string(name: 'SPEC', defaultValue: "cypress/integration/*.test.js", description: "enter the script path")
+        // choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "choose your browser")
+    // }
 
     options {
         ansiColor('xterm')
@@ -18,20 +14,21 @@ pipeline {
     stages{
         stage('SCM'){
             steps{
-                echo "Building the application"
+                echo "Building docker image"
                 bat 'node --version'
+                bat 'docker build -t dikabrenda/cypress_project .'
             }
         }
         stage('Populate ENV'){
             steps{
                 echo "Populate ENV"
-                bat "cp env\\env.sample .env.test"
+                // bat "cp env//env.sample .env"
             }
         }
         stage('Testing'){
             steps{
-                bat "npm i"
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                bat "docker-compose run chrome"
+                // bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
         stage('Stash Report'){

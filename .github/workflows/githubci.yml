@@ -19,6 +19,14 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
+      - name: Declarative SCM
+        uses: actions/checkout@v2
+
+      - name: SCM
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: Build and Push Docker
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
