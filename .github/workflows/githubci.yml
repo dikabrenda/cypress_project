@@ -13,17 +13,18 @@ jobs:
   test:
     name: Github CI - ${{ matrix.node-version}} ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    container: cypress/browsers:node14.17.0-chrome88-ff89
-
+    
     strategy:
       matrix:
         node-version: [14.x]
         os: [ubuntu-latest]
 
     steps:
-    - name: Deploy report page to github page
-      uses: peaceiris/actions-gh-pages@v3.7.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
+    - name: Build and Push Docker
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: dikabrenda/cypress_project
+          tags: v1
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
