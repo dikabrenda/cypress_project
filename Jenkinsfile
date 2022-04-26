@@ -15,8 +15,8 @@ pipeline {
         stage('SCM'){
             steps{
                 echo "Building docker image"
+                bat 'ls -l'
                 bat 'node --version'
-                bat 'docker build -t dikabrenda/cypress_project .'
             }
         }
         stage('Populate ENV'){
@@ -34,6 +34,7 @@ pipeline {
         stage('Stash Report'){
             steps{
                 echo "Deploy the application"
+                bat "docker-compose down"
             }
         }
     }
