@@ -15,7 +15,7 @@ pipeline {
         stage('SCM'){
             steps{
                 echo "Building docker image"
-                bat 'ls -l'
+                bat 'ls'
                 bat 'node --version'
             }
         }
