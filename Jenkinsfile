@@ -1,39 +1,52 @@
+def gv = load "jenkins/script.groovy"
+
 pipeline {
-
     agent any
-
+    environment {
+        BRANCH = 'master'
+        CHANGES = true
+    }
     options {
         ansiColor('xterm')
     }
 
     stages{
         stage('SCM'){
+            when {
+                expression {
+                    BRANCH_NAME == "${BRANCH}" && CODE_CHANGES == "${CHANGES}"
+                }
+            }
             steps{
-                bat "docker build -t dikabrenda/cypress_project:v1 -f Dockerfile ."
+                script {
+                    gv.buildApp()
+                }
             }
         }
         stage('Populate ENV'){
             steps{
-                echo "populate env"
+                script {
+                    gv.populateEnv()
+                }
             }
         }
         stage('Testing'){
+            when {
+                expression {
+                    BRANCH_NAME == "${BRANCH}"
+                }
+            }
             steps{
-                bat "docker-compose run chrome"
+                script {
+                    gv.dockerCompose()
+                }
             }
         }
         stage('Stash Report'){
             steps{
-                publishHTML ([
-                allowMissing: false, 
-                alwaysLinkToLastBuild: false, 
-                keepAll: false, 
-                reportDir: 'cypress/reports/mochareport', 
-                reportFiles: 'index.html', 
-                reportName: 'HTML Report', 
-                reportTitles: ''
-            ])
-                
+                script {
+                    gv.publishReport()
+                }
             }
         }
     }
