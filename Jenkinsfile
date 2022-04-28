@@ -2,10 +2,10 @@ def gv
 
 pipeline {
     agent any
-    environment {
-        BRANCH = 'master'
-        CHANGES = true
-    }
+    // environment {
+        // BRANCH = 'master'
+        // CHANGES = true
+    // }
     options {
         ansiColor('xterm')
     }
@@ -19,11 +19,11 @@ pipeline {
             }
         }
         stage('SCM'){
-            when {
-                expression {
-                    BRANCH_NAME == "${BRANCH}" && CODE_CHANGES == "${CHANGES}"
-                }
-            }
+            // when {
+                // expression {
+                    // BRANCH_NAME == "${BRANCH}" && CODE_CHANGES == "${CHANGES}"
+                // }
+            // }
             steps{
                 script {
                     gv.buildApp()
@@ -38,11 +38,11 @@ pipeline {
             }
         }
         stage('Testing'){
-            when {
-                expression {
-                    BRANCH_NAME == "${BRANCH}"
-                }
-            }
+            // when {
+                // expression {
+                    // BRANCH_NAME == "${BRANCH}"
+                // }
+            // }
             steps{
                 script {
                     gv.dockerCompose()
