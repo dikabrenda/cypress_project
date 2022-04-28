@@ -20,7 +20,7 @@
         "reportDir": "cypress/reports/mocha",
         "quite": true,
         "overwrite": false,
-        "html": true,
+        "html": false,
         "json": true,
         "showPassed": true,
         "autoOpen": false,
