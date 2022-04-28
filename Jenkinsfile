@@ -9,7 +9,7 @@ pipeline {
     stages{
         stage('SCM'){
             steps{
-                bat "docker build -t dikabrenda/cypress_project -f Dockerfile ."
+                bat "docker build -t dikabrenda/cypress_project:v1 -f Dockerfile ."
             }
         }
         stage('Populate ENV'){
