@@ -11,6 +11,13 @@ pipeline {
     }
 
     stages{
+        stage('Initial'){
+            steps{
+                script {
+                    gv = load "jenkins/script.groovy"
+                }
+            }
+        }
         stage('SCM'){
             // when {
                 // expression {
@@ -19,7 +26,6 @@ pipeline {
             // }
             steps{
                 script {
-                    gv = load "jenkins/script.groovy"
                     gv.buildApp()
                 }
             }
