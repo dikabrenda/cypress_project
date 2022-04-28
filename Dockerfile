@@ -11,5 +11,4 @@ COPY ./cypress.json .
 COPY ./cypress ./cypress
 EXPOSE 80
 RUN npm install -g --unsafe-perm=true --allow-root
-RUN npm install
 ENTRYPOINT [ "npm", "run" ]
