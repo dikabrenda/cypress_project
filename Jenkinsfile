@@ -18,8 +18,8 @@ pipeline {
                 // }
             // }
             steps{
-                gv = load "jenkins/script.groovy"
                 script {
+                    gv = load "jenkins/script.groovy"
                     gv.buildApp()
                 }
             }
