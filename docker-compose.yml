@@ -1,14 +1,14 @@
 version: '3'
 services:
   chrome:
-    image: "dikabrenda/cypress_project:v2"
+    image: "dikabrenda/cypress_project:v3"
     command: "test"
     volumes:
       - ./cypress/videos:/cypress-project/cypress/videos
       - ./cypress/reports:/cypress-project/cypress/reports
 
   firefox:
-    image: "dikabrenda/cypress_project:v2"
+    image: "dikabrenda/cypress_project:v3"
     command: "test:firefox"
     volumes:
       - ./cypress/videos:/cypress-project/cypress/videos
