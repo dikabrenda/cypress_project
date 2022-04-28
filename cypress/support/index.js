@@ -1,3 +1,5 @@
+
+// Enable support for xpath
 import 'cypress-xpath'
 
 Cypress.on('uncaught:exception', (_err, _runnable) => {
@@ -6,10 +8,10 @@ Cypress.on('uncaught:exception', (_err, _runnable) => {
 
 import addContext from 'mochawesome/addContext'
 
-Cypress.on('test:after:run', (test, runnable) => {
+Cypress.on("test:after:run", (test, runnable) => {
   if (test.state === 'failed') {
-    const screenshot = `${Cypress.config('screenshotsFolder')}/${Cypress.spec.name}/${runnable.parent.title} -- ${test.title} (failed).png`;
-    addContext({ test }, screenshot);
+    const screenshot = `assets/${Cypress.spec.name}/${runnable.parent.title} -- ${test.title} (failed).png`
+    addContext({ test }, screenshot)
   }
 });
 
