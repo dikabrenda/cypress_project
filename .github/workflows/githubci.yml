@@ -18,7 +18,7 @@ jobs:
         node-version: [14.x]
         os: [ubuntu-latest]
     
-  steps:
+    steps:
     - name: Check Out Repo
       uses: actions/checkout@v2
 
