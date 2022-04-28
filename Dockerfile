@@ -10,5 +10,5 @@ COPY ./package-lock.json .
 COPY ./cypress.json .
 COPY ./cypress ./cypress
 EXPOSE 80
-RUN npm install -g --unsafe-perm=true --allow-root
+RUN npm install --unsafe-perm=true --allow-root
 ENTRYPOINT [ "npm", "run" ]
