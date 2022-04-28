@@ -1,4 +1,4 @@
-def gv = load "jenkins/script.groovy"
+def gv
 
 pipeline {
     agent any
@@ -11,6 +11,13 @@ pipeline {
     }
 
     stages{
+        stage('initial'){
+            steps{
+                script{
+                    gv = load "jenkins/script.groovy"
+                }
+            }
+        }
         stage('SCM'){
             when {
                 expression {
