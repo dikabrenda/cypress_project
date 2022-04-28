@@ -1,5 +1,4 @@
 def buildApp(){
-    echo "${BRANCH}"
     bat "docker build -t dikabrenda/cypress_project:v1 -f Dockerfile ."
 }
 
