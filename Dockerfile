@@ -12,6 +12,6 @@ COPY ./cypress ./cypress
 
 EXPOSE 80
 
-RUN sudo npm install --unsafe-perm=true --allow-root cypress
+RUN npm install --unsafe-perm=true --allow-root cypress
 
 ENTRYPOINT [ "npm", "run" ]
