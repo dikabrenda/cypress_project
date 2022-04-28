@@ -1,7 +1,6 @@
 def gv
 
 def buildApp(){
-    gv = load "jenkins/script.groovy"
     bat "docker build -t dikabrenda/cypress_project:v1 -f Dockerfile ."
 }
 

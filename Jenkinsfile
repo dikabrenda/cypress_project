@@ -1,3 +1,5 @@
+def gv
+
 pipeline {
     agent any
     // environment {
@@ -16,6 +18,7 @@ pipeline {
                 // }
             // }
             steps{
+                gv = load "jenkins/script.groovy"
                 script {
                     gv.buildApp()
                 }
