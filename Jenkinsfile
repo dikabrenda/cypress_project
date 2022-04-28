@@ -1,5 +1,3 @@
-def gv
-
 pipeline {
     agent any
     // environment {
@@ -11,13 +9,6 @@ pipeline {
     }
 
     stages{
-        stage('initial'){
-            steps{
-                script{
-                    gv = load "jenkins/script.groovy"
-                }
-            }
-        }
         stage('SCM'){
             // when {
                 // expression {
