@@ -6,6 +6,8 @@
   "scripts": {
     "test:chrome": "cypress run --headed --browser chrome",
     "test:headless": "cypress run --headless --browser chrome",
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports/mochareport",
+    "pretest": "npm run clean:reports",
     "cy:combine": "mochawesome-merge ./cypress/reports/mocha/*.json -o ./cypress/reports/mochareport/index.json",
     "cy:generate": "marge ./cypress/reports/mochareport/index.json -f index -o cypress/reports/mochareport",
     "posttest": "npm run cy:combine && npm run cy:generate",
@@ -16,7 +18,7 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "cypress-mochawesome-reporter": "^2.3.0",
+    "cypress-mochawesome-reporter": "^3.0.1",
     "cypress-multi-reporters": "^1.5.0",
     "dotenv": "^16.0.0",
     "mocha": "^9.2.1",
