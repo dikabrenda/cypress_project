@@ -11,13 +11,13 @@ pipeline {
     }
 
     stages{
-        stage('Initial'){
-            steps{
-                script {
-                    gv = load "jenkins/script.groovy"
-                }
-            }
-        }
+        // stage('Initial'){
+            // steps{
+                // script {
+                    // gv = load "jenkins/script.groovy"
+                // }
+            // }
+        // }
         stage('SCM'){
             // when {
                 // expression {
@@ -26,6 +26,7 @@ pipeline {
             // }
             steps{
                 script {
+                    gv = load "jenkins/script.groovy"
                     gv.buildApp()
                 }
             }
@@ -51,9 +52,15 @@ pipeline {
         }
         stage('Stash Report'){
             steps{
-                script {
-                    gv.publishReport()
-                }
+                publishHTML ([
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: false,
+                reportDir: 'cypress/reports/mochareport',
+                reportFiles: 'index.html',
+                reportName: 'HTML Report',
+                reportTitles: ''
+])
             }
         }
     }
