@@ -10,6 +10,7 @@
     "screenshotsFolder": "cypress/reports/mochareport/assets",
     "videosFolder": "cypress/reports/mochareport/assets",
     "integrationFolder": "cypress/integration",
+    "testFiles": ["main.spec.js"],
     "chromeWebSecurity": false,
     "pluginsFile": false,
     "defaultCommandTimeout": 10000,
