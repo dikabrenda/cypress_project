@@ -1,5 +1,6 @@
 def buildApp(){
-    bat "docker build -t dikabrenda/cypress_project:v3 ."
+    bat "docker run -p 3000:3000 dikabrenda/cypress_project:v3 ."
+    // bat "docker build -t dikabrenda/cypress_project:v3 ."
 }
 
 def populateEnv(){
