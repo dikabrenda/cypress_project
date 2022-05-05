@@ -11,7 +11,8 @@ COPY ./cypress.json .
 COPY ./cypress ./cypress
 
 EXPOSE 80
-RUN npm cache clean --force
-RUN npm install --unsafe-perm=true --allow-root cypress
+RUN npm cache clean --force \
+    && npm update \
+    && npm install --unsafe-perm=true --allow-root cypress
 
 ENTRYPOINT [ "npm", "run" ]
